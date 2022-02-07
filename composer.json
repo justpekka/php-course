@@ -1,0 +1,19 @@
+{
+    "name": "justpekka/rng-pekka",
+    "description": "the simple Random Number Generator from me.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Justpekka\\RngPekka\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Just Pekka",
+            "email": "ariefkhrisna631@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
