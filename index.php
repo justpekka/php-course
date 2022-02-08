@@ -12,30 +12,31 @@
     if($_SERVER['REQUEST_METHOD'] === "POST") {
       $dices = $_REQUEST['dices'] != null ? $_REQUEST['dices'] : null;
       $types = $_REQUEST['types'] != null ? $_REQUEST['types'] : null;
+      settype($dices, "int");
+      settype($types, "int");
+      $result = Array();
       $i = 0;
-      $result = 0;
-      echo gettype($dices);
-      
-      // do {
-      //   echo $result . "\n";
-      //   // $result++;
-      //   $i == $dices;
-      // } while ($i++);
+      do {
+        $result[] = rand(1, $types);
+        
+        $i++;
+      } while ($i < $dices);
 
-      // for($i; $i<$dices; $i++) {
-      //   echo $result . "\n";
-      // }
+      // $result = 0;
+      // for($i=0; $i<$dices; $i++) {
+      //   echo $result+$i+1 . "\n";
+      // };
     };
   ?>
 
   <body>
     <form action="" method="post">
-      <input type="number" name="dices">
-      <input type="number" name="types">
+      <input type="number" name="dices" min="1" max="10" placeholder="1 - 10">
+      <input type="number" name="types" min="2" max="10" placeholder="2 - 10">
       <input type="submit" value="Submit">
     </form>
 
-    <span class="result"><?#php if($result) echo $result; ?></span>
+    <span class="result"><?php if($result) print_r($result); ?></span>
   </body>
 
 </html>
